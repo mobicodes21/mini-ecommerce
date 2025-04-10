@@ -4,7 +4,7 @@ addItemToCart
 } from '../redux/cart/cartSlice';
 import { useDispatch } from 'react-redux'
 
-export default function ProductCart({product}) {
+export default function ProductCard({product}) {
     const dispatch = useDispatch();
 
     const handleAddToCart = ()=>{
