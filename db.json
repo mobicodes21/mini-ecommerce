@@ -1,0 +1,84 @@
+{
+  "socialLinks": [
+    {
+      "id": "1",
+      "platform": "instagram",
+      "url": "https://instagram.com/"
+    },
+    {
+      "id": "2",
+      "platform": "twitter",
+      "url": "https://twitter.com/"
+    },
+    {
+      "id": "3",
+      "platform": "linkedin",
+      "url": "https://linkedin.com/"
+    }
+  ],
+  "users": [
+    {
+      "id": "b57e",
+      "username": "mobina",
+      "email": "m.alimossmch@gmail.com",
+      "password": "12345678",
+      "confirmPassword": "12345678"
+    }
+  ],
+  "popularProducts": [
+    {
+      "id": 1,
+      "title": "کفش ورزشی نایک",
+      "image": "",
+      "price": 120000
+    },
+    {
+      "id": 2,
+      "title": "هدفون بی سیم سونی",
+      "image": "",
+      "price": 80000
+    },
+    {
+      "id": 3,
+      "title": "ساعت هوشمند سامسونگ",
+      "image": "",
+      "price": 1500000
+    },
+    {
+      "id": 4,
+      "title": "ساعت هوشمند سامسونگ",
+      "image": "",
+      "price": 1500000
+    }
+  ],
+  "specialOffers": [
+    {
+      "id": 1,
+      "title": "ساعت هوشمند سامسونگ",
+      "image": "",
+      "oldPrice": 1500000,
+      "newPrice": 1000000
+    },
+    {
+      "id": 2,
+      "title": "ساعت هوشمند سامسونگ",
+      "image": "",
+      "oldPrice": 1500000,
+      "newPrice": 1000000
+    },
+    {
+      "id": 3,
+      "title": "ساعت هوشمند سامسونگ",
+      "image": "",
+      "oldPrice": 1500000,
+      "newPrice": 1000000
+    },
+    {
+      "id": 4,
+      "title": "ساعت هوشمند سامسونگ",
+      "image": "",
+      "oldPrice": 1500000,
+      "newPrice": 1000000
+    }
+  ]
+}
