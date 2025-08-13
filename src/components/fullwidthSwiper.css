@@ -1,0 +1,4 @@
+/* Updated active bullet color to match brand's green tone */
+.swiper-pagination-bullet-active{
+    background-color: #A3B18A !important;
+}
