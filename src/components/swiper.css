@@ -1,0 +1,18 @@
+/* Style both next and previous navigation buttons */
+.swiper-button-next, .swiper-button-prev{
+    color: #FFFFFF !important;
+    background-color: #D4B483;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;/* Ensure buttons appear above slides */
+}
+/* Increase the size of the arrow icons */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px !important;
+}
