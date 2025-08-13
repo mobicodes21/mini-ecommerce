@@ -1,5 +1,5 @@
 import AdvantagesSection from '../components/AdvantagesSection';
-import CategoriesSwiper from "./CategoriesSwiper"
+import CategoriesSwiper from "../components/CategoriesSwiper"
 import FullWidthSwiper from '../components/FullWidthSwiper';
 import NewsLetter from "../components/NewsLetter"
 import PopularProducts from '../components/PopularProducts';

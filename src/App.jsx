@@ -6,14 +6,14 @@ import './assets/fonts/fonts.css';
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"
 
 import AboutUs from './pages/AboutUs'
-import Banner from "./pages/Banner"
+import Banner from "./components/Banner"
 import Cart from "./components/Cart"
-import CategoriesSwiper from './pages/CategoriesSwiper'
+import CategoriesSwiper from './components/CategoriesSwiper'
 import ContactUs from './pages/ContactUs'
 import Footer from './components/Footer'
 import Home from "./pages/Home"
 import LoginPage from "./pages/LoginPage"
-import Navbar from "./pages/Navbar"
+import Navbar from "./components/Navbar"
 import ProductDetails from "./components/ProductDetails"
 import ProductList from './components/ProductList'
 import SearchResults from './components/SearchResults'
