@@ -1,84 +1,427 @@
+
 {
-  "socialLinks": [
+  "products": [
     {
       "id": "1",
-      "platform": "instagram",
-      "url": "https://instagram.com/"
+      "title": "عینک آفتابی آلبرت",
+      "image": "/images/glasses.webp",
+      "price": 1800000,
+      "discount": 30,
+      "isPopular": true,
+      "category": "عینک"
     },
     {
       "id": "2",
-      "platform": "twitter",
-      "url": "https://twitter.com/"
+      "title": "گوشواره زنانه",
+      "image": "/images/earings.webp",
+      "price": 720000,
+      "discount": 0,
+      "isPopular": true,
+      "category": "زیورآلات"
     },
     {
       "id": "3",
-      "platform": "linkedin",
-      "url": "https://linkedin.com/"
+      "title": "عینک آفتابی مردانه",
+      "image": "/images/glassessPopular.webp",
+      "price": 3800000,
+      "discount": 0,
+      "newPrice": 3600000,
+      "isPopular": true,
+      "category": "عینک"
+    },
+    {
+      "id": "4",
+      "title": "کفش زنانه مدل شیما ",
+      "image": "/images/womenShoes.webp",
+      "price": 1520000,
+      "discount": 15,
+      "isPopular": true,
+      "category": "کفش"
+    },
+    {
+      "id": "5",
+      "title": "گوشواره طلا 18 عیار",
+      "image": "/images/earings1.webp",
+      "price": 120800,
+      "discount": 0,
+      "isPopular": true,
+      "category": "زیورآلات"
+    },
+    {
+      "id": "6",
+      "title": "ساعت مچی عقربه‌ای",
+      "image": "/images/clock.webp",
+      "price": 1500000,
+      "discount": 30,
+      "isPopular": true,
+      "category": "ساعت"
+    },
+    {
+      "id": "7",
+      "title": "کفش روزمره شیما",
+      "image": "/images/shoes.webp",
+      "price": 950000,
+      "discount": 10,
+      "isPopular": true,
+      "category": "کفش"
+    },
+    {
+      "id": "8",
+      "title": "ساعت عقربهای کوارتز",
+      "image": "/images/clockPopular.webp",
+      "price": 2800000,
+      "discount": 10,
+      "isPopular": true,
+      "category": "ساعت"
+    },
+    {
+      "id": "9",
+      "title": "دستبند مردانه",
+      "image": "/images/bracelet.webp",
+      "price": 1500000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "زیورآلات"
+    },
+    {
+      "id": "10",
+      "title": "گوشواره بچگانه",
+      "image": "/images/earings2.webp",
+      "price": 800000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "زیورآلات"
+    },
+    {
+      "id": "11",
+      "title": "النگو طلا",
+      "image": "/images/bangle.webp",
+      "price": 2000000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "زیورآلات"
+    },
+    {
+      "id": "12",
+      "title": "النگو طلا",
+      "image": "/images/bangle1.webp",
+      "price": 2500000,
+      "discount": 20,
+      "isPopular": false,
+      "category": "زیورآلات"
+    },
+    {
+      "id": "13",
+      "title": "آویز گردنبند",
+      "image": "/images/necklace.webp",
+      "price": 1400000,
+      "discount": 5,
+      "isPopular": false,
+      "category": "زیورآلات"
+    },
+    {
+      "id": "14",
+      "title": "دستبند زنانه ناریا",
+      "image": "/images/bangle3.webp",
+      "price": 2300000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "زیورآلات"
+    },
+    {
+      "id": "15",
+      "title": "عینک مردانه ری بن",
+      "image": "/images/glassessRayBan.webp",
+      "price": 10000000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "عینک"
+    },
+    {
+      "id": "16",
+      "title": "عینک ری بن مدل 195",
+      "image": "/images/glassessRayBan1.webp",
+      "price": 12030000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "عینک"
+    },
+    {
+      "id": "17",
+      "title": "عینک آفتابی خلبانی",
+      "image": "/images/glassess3.webp",
+      "price": 10890000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "عینک"
+    },
+    {
+      "id": "18",
+      "title": "عینک آفتابی زنانه",
+      "image": "/images/glassessRayBan2.webp",
+      "price": 3850000,
+      "discount": 10,
+      "isPopular": false,
+      "category": "عینک"
+    },
+    {
+      "id": "19",
+      "title": "عینک آفتابی ری‌بن",
+      "image": "/images/glassessRayBan4.webp",
+      "price": 4650000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "عینک"
+    },
+    {
+      "id": "20",
+      "title": "عینک آفتابی چندضلعی",
+      "image": "/images/glassess5.webp",
+      "price": 3500000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "عینک"
+    },
+    {
+      "id": "21",
+      "title": "ساعت مچی عقربه‌ای زنانه",
+      "image": "/images/watch.webp",
+      "price": 1700000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "ساعت"
+    },
+    {
+      "id": "22",
+      "title": "ساعت مچی زنانه کاسیو",
+      "image": "/images/watch1.webp",
+      "price": 1800000,
+      "discount": 10,
+      "isPopular": false,
+      "category": "ساعت"
+    },
+    {
+      "id": "23",
+      "title": "ساعت مچی دیجیتال",
+      "image": "/images/watch2.webp",
+      "price": 1300000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "ساعت"
+    },
+    {
+      "id": "24",
+      "title": "ساعت مچی کاسیو",
+      "image": "/images/watch3.webp",
+      "price": 1000000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "ساعت"
+    },
+    {
+      "id": "25",
+      "title": "ساعت مچی مردانه",
+      "image": "/images/watch4.webp",
+      "price": 1200000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "ساعت"
+    },
+    {
+      "id": "26",
+      "title": "ساعت مچی سیکو",
+      "image": "/images/watch5.webp",
+      "price": 2400000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "ساعت"
+    },
+    {
+      "id": "27",
+      "title": "کفش روزمره زنانه",
+      "image": "/images/shoes1.webp",
+      "price": 580000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "کفش"
+    },
+    {
+      "id": "28",
+      "title": "کفش روزمره زنانه شیما",
+      "image": "/images/shoes2.webp",
+      "price": 760000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "کفش"
+    },
+    {
+      "id": "29",
+      "title": "کفش زنانه",
+      "image": "/images/shoes3.webp",
+      "price": 700000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "کفش"
+    },
+    {
+      "id": "30",
+      "title": "کفش روزمره مردانه",
+      "image": "/images/shoes4.webp",
+      "price": 450000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "کفش"
+    },
+    {
+      "id": "31",
+      "title": "کفش مردانه",
+      "image": "/images/shoes6.webp",
+      "price": 680000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "کفش"
+    },
+    {
+      "id": "32",
+      "title": "کفش مردانه",
+      "image": "/images/shoes5.webp",
+      "price": 800000,
+      "discount": 0,
+      "isPopular": false,
+      "category": "کفش"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "image": "/images/jweleryCat.webp",
+      "title": "زیورآلات",
+      "value": "زیورآلات"
+    },
+    {
+      "id": "2",
+      "image": "/images/glasses.webp",
+      "title": "عینک",
+      "value": "عینک"
+    },
+    {
+      "id": "3",
+      "image": "/images/clock.webp",
+      "title": "ساعت",
+      "value": "ساعت"
+    },
+    {
+      "id": "4",
+      "image": "/images/shoes.webp",
+      "title": "کفش",
+      "value": "کفش"
     }
   ],
   "users": [
     {
-      "id": "b57e",
+      "id": "1e52",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "da8c",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "bd97",
+      "username": "assassa",
+      "email": "mobinaalimohammadi40@gmail.com",
+      "password": "12345678",
+      "confirmPassword": "12345678"
+    },
+    {
+      "id": "2690",
+      "username": "assassa",
+      "email": "m.alimossmch@gmail.com",
+      "password": "sddssdd",
+      "confirmPassword": "sddssdd"
+    },
+    {
+      "id": "9a5d",
       "username": "mobina",
       "email": "m.alimossmch@gmail.com",
       "password": "12345678",
       "confirmPassword": "12345678"
-    }
-  ],
-  "popularProducts": [
-    {
-      "id": 1,
-      "title": "کفش ورزشی نایک",
-      "image": "",
-      "price": 120000
     },
     {
-      "id": 2,
-      "title": "هدفون بی سیم سونی",
-      "image": "",
-      "price": 80000
+      "id": "f045",
+      "username": "assassa",
+      "email": "m.alimossmch@gmail.com",
+      "password": "12345678",
+      "confirmPassword": "12345678"
     },
     {
-      "id": 3,
-      "title": "ساعت هوشمند سامسونگ",
-      "image": "",
-      "price": 1500000
+      "id": "060e",
+      "username": "assassa",
+      "email": "m.alimossmch@gmail.com",
+      "password": "12345678",
+      "confirmPassword": "12345678"
     },
     {
-      "id": 4,
-      "title": "ساعت هوشمند سامسونگ",
-      "image": "",
-      "price": 1500000
-    }
-  ],
-  "specialOffers": [
-    {
-      "id": 1,
-      "title": "ساعت هوشمند سامسونگ",
-      "image": "",
-      "oldPrice": 1500000,
-      "newPrice": 1000000
+      "id": "9b11",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
     },
     {
-      "id": 2,
-      "title": "ساعت هوشمند سامسونگ",
-      "image": "",
-      "oldPrice": 1500000,
-      "newPrice": 1000000
+      "id": "fd50",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
     },
     {
-      "id": 3,
-      "title": "ساعت هوشمند سامسونگ",
-      "image": "",
-      "oldPrice": 1500000,
-      "newPrice": 1000000
+      "id": "af8a",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
     },
     {
-      "id": 4,
-      "title": "ساعت هوشمند سامسونگ",
-      "image": "",
-      "oldPrice": 1500000,
-      "newPrice": 1000000
+      "id": "20c9",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "f358",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "8b87",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "1c5e",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
+    },
+    {
+      "id": "afc8",
+      "username": "mobina",
+      "email": "example@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456"
     }
   ]
 }
