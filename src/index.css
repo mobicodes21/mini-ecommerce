@@ -1,5 +1,13 @@
+@import './assets/fonts/fonts.css';
 body, html{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  font-family: 'IRANSansfanum' !important;
+}
+.swiper-button-next{
+    color: red
+}
+* {
+  font-family: 'IRANSansfanum', sans-serif !important;
 }
