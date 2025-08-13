@@ -1,26 +1,31 @@
-import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
-
-import React from 'react'
 import {
-addItemToCart
-} from '../redux/cart/cartSlice';
-import { useDispatch } from 'react-redux'
+  Button,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 
-export default function ProductCard({product}) {
-    const dispatch = useDispatch();
-    const handleAddToCart = ()=>{
-        dispatch(addItemToCart(product));
-    };
+import { Link } from "react-router-dom";
+// Component to display a single product card with clickable link
+export default function ProductCard({ product }) {
   return (
-    <Card sx={{maxWidth: 345, boxShadow: 3}}>
-        {/* <CardMedia>
-        </CardMedia> */}
+    // Link wraps the entire card to navigate to the product detail page
+    <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+      <Card sx={{ width: 200, boxShadow: 3, cursor: "pointer" }}>
         <CardContent>
-        <Typography variant="h6" gutterBottom>{product.name}</Typography>
-        <Typography variant='body2' color='text.secondary'>{product.description}</Typography>
-        <Typography variant='body1'>${product.price}</Typography>
-        <Button size='small' sx={{marginTop: 2}} onClick={handleAddToCart}>Add to Cart</Button>
+          {/* Product name/title */}
+          <Typography variant="h6" gutterBottom>
+            {product.name}
+          </Typography>
+          {/* Short description of the product */}
+          <Typography variant="body2" color="text.secondary">
+            {product.description}
+          </Typography>
+          {/* Product price */}
+          <Typography variant="body1">${product.price}</Typography>
         </CardContent>
-    </Card>
-  )
+      </Card>
+    </Link>
+  );
 }
