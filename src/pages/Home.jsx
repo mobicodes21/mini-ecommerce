@@ -1,27 +1,26 @@
-import { Box, Grid, Typography } from '@mui/material';
+import AdvantagesSection from '../components/AdvantagesSection';
+import CategoriesSwiper from "./CategoriesSwiper"
+import FullWidthSwiper from '../components/FullWidthSwiper';
+import NewsLetter from "../components/NewsLetter"
+import PopularProducts from '../components/PopularProducts';
+import SpecialOffers from '../components/SpecialOffers';
 
-import ProductCard from '../components/ProductCard';
-import React from 'react'
-
-const products = [
-    {id:1, name: 'T-shirt', price: 20, description: 'This is a T-shirt with unique material.'},
-    {id:2, name: 'Jeans', price: 40, description: 'This is a Jeans with unique material.'},
-    {id:3, name: 'Sneakers', price: 60, description: 'This is a Sneakers with unique material.'},
-    {id:3, name: 'Baseball Cap', price: 25, description: 'This is a Baseball Cap with unique material.'},
-    {id:3, name: 'Shoes', price: 30, description: 'This is a Shoes with unique material.'},
-];
-
+{/* Home Page - Main landing page of store including:
+-FullWidthSwiper: First slider of Home Page
+-CategoriesSwiper: Second slider for categories
+-PopularProducts: Section for popular products
+-SpecialOffers: Slider for products with offer
+-AdvantagesSection: Section for showing the advantages of the online-shop
+-NewsLetter: Email subscription for  */}
 export default function Home() {
   return (
-    <Box sx={{padding:2}}>
-      <Typography variant="h4" gutterBottom>Product List</Typography>
-      <Grid container spacing={2}>
-      {products.map((product)=> (
-            <Grid item xs={12} sm={6} md={3} key={product}>
-              <ProductCard key={product.id} product={product}/>
-            </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <>
+      <FullWidthSwiper/>
+          <CategoriesSwiper/>
+          <PopularProducts/>
+          <SpecialOffers/>
+      <AdvantagesSection/>
+            <NewsLetter/>
+    </>
   )
 }
