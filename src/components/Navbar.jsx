@@ -45,19 +45,19 @@ export default function Navbar() {
         >
           {/* Logo / Title */}
           <Typography
-            variant="h6"
+            variant="h5"
             component={Link}
             to="/"
             sx={{
               color: "secondary.main",
-              fontWeight: "bold",
+              fontWeight: "bolder",
               textDecoration: "none",
               "&:hover": {
                 textDecoration: "none",
               },
             }}
           >
-            مای‌شاپ
+            پوشا مد
           </Typography>
 
           {/* Search box – visible on medium screens and up */}

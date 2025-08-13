@@ -47,14 +47,14 @@ export default function Footer() {
               <Typography
                 variant="h5"
                 sx={{
-                  fontWeight: "bold",
+                  fontWeight: "bolder",
                   mb: 1,
                   color: "secondary.main",
                   opacity: 0.8,
                   letterSpacing: 1.2,
                 }}
               >
-                مای‌شاپ
+                پوشا مد
               </Typography>
               <Typography
                 variant="body2"

@@ -72,7 +72,7 @@ const AboutUs = () => {
         <Container maxWidth="lg">
           {/* general description text */}
           <Typography sx={{ mb: 3, fontFamily: "IRANSansfanum" }}>
-            ما در <strong>مای‌شاپ</strong> با هدف ارائه‌ی بهترین محصولات با
+            ما در <strong>پوشا مد</strong> با هدف ارائه‌ی بهترین محصولات با
             بالاترین کیفیت، راه‌اندازی شده‌ایم. تیم ما از افراد متخصص و با تجربه
             تشکیل شده است و ما به ارائه‌ی خدماتی فراتر از انتظارات شما متعهد
             هستیم.
