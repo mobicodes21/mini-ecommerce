@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom"; // Outlet for nested routes rendering
-import Banner from "../pages/Banner";// Banner component at the top of the page
-import Navbar from "../pages/Navbar";// Navigation bar component
+import Banner from "../components/Banner";// Banner component at the top of the page
+import Navbar from "../components/Navbar";// Navigation bar component
 import Footer from "./Footer";// Footer component
 
 const MainLayout = () => {
