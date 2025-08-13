@@ -1,5 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
-// Banner component displays a message at the top of the page
+// Banner component displays a promotional message at the top of the page
 export default function Banner() {
   return (
     <Box
