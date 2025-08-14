@@ -23,7 +23,7 @@ export default function SpecialOffers() {
       sx={{
         maxWidth: "100%",
         margin: "auto",
-        mt: 15,
+        my: 4,
         backgroundColor: "rgba(163, 177, 138, 0.7)",
         padding: 3,
       }}

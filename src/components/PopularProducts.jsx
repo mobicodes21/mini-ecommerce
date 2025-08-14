@@ -9,6 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
+
 // Functional component to display popular products
 export default function PopularProducts() {
   // State to store fetched products
@@ -31,7 +32,7 @@ export default function PopularProducts() {
   if (products.length === 0) return <p>محصولی یافت نشد</p>;
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 15 }}>
+    <Container maxWidth="lg" sx={{ my: 4 }}>
       <Typography
         variant="h5"
         textAlign="center"

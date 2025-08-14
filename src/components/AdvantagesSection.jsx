@@ -28,7 +28,7 @@ const advantages = [
 
 export default function AdvantagesSection() {
   return (
-    <Box sx={{ p: 1, mt: 15, overflow: "hidden" }}>
+    <Box sx={{ p: 1, my: 4, overflow: "hidden" }}>
       <Typography
         variant="h5"
         sx={{

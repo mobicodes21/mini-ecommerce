@@ -6,25 +6,27 @@ import {
   Button,
   Drawer,
   IconButton,
-  InputBase,
   List,
   ListItem,
   ListItemText,
   Toolbar,
   Typography,
 } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
 
-import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchBox from "./SearchBox";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Navbar() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
-  // Toggle drawer open/close
+  const location = useLocation();
+
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
   };
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <>
@@ -60,10 +62,10 @@ export default function Navbar() {
             پوشا مد
           </Typography>
 
-          {/* Search box – visible on medium screens and up */}
+          {/* Search box */}
           <SearchBox />
 
-          {/* Desktop navigation links – hidden on xs */}
+          {/* Desktop navigation */}
           <Box
             sx={{
               display: { xs: "none", sm: "flex" },
@@ -71,19 +73,19 @@ export default function Navbar() {
               alignItems: "center",
             }}
           >
-            <Link to="/" style={linkStyle}>
+            <Link to="/" style={{ ...linkStyle, ...(isActive("/") && activeLinkStyle) }}>
               خانه
             </Link>
-            <Link to="/contact" style={linkStyle}>
+            <Link to="/contact" style={{ ...linkStyle, ...(isActive("/contact") && activeLinkStyle) }}>
               تماس با ما
             </Link>
-            <Link to="/about" style={linkStyle}>
+            <Link to="/about" style={{ ...linkStyle, ...(isActive("/about") && activeLinkStyle) }}>
               درباره ما
             </Link>
             <Link to="/cart">
               <IconButton
                 sx={{
-                  color: "primary.main",
+                  color: isActive("/cart") ? "secondary.main" : "primary.main",
                   "&:hover": { color: "secondary.main" },
                 }}
               >
@@ -91,7 +93,15 @@ export default function Navbar() {
               </IconButton>
             </Link>
             <Link to="/login">
-              <Button variant="contained" sx={loginButtonStyle}>
+              <Button
+                variant="contained"
+                sx={{
+                  ...loginButtonStyle,
+                  ...(isActive("/login") && {
+                    backgroundColor: "secondary.main",
+                  }),
+                }}
+              >
                 ورود | ثبت نام
               </Button>
             </Link>
@@ -118,19 +128,19 @@ export default function Navbar() {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            <ListItem button component={Link} to="/" sx={linkStyle}>
+            <ListItem button component={Link} to="/" sx={isActive("/") ? activeDrawerLink : linkStyle}>
               <ListItemText primary="خانه" />
             </ListItem>
-            <ListItem button component={Link} to="/contact" sx={linkStyle}>
+            <ListItem button component={Link} to="/contact" sx={isActive("/contact") ? activeDrawerLink : linkStyle}>
               <ListItemText primary="تماس با ما" />
             </ListItem>
-            <ListItem button component={Link} to="/about" sx={linkStyle}>
+            <ListItem button component={Link} to="/about" sx={isActive("/about") ? activeDrawerLink : linkStyle}>
               <ListItemText primary="درباره ما" />
             </ListItem>
-            <ListItem button component={Link} to="/cart" sx={linkStyle}>
+            <ListItem button component={Link} to="/cart" sx={isActive("/cart") ? activeDrawerLink : linkStyle}>
               <ListItemText primary="سبد خرید" />
             </ListItem>
-            <ListItem button component={Link} to="/login" sx={linkStyle}>
+            <ListItem button component={Link} to="/login" sx={isActive("/login") ? activeDrawerLink : linkStyle}>
               <ListItemText primary="ورود | ثبت نام" />
             </ListItem>
           </List>
@@ -140,7 +150,7 @@ export default function Navbar() {
   );
 }
 
-// Styles defined separately for clarity and reuse
+// Default link style
 const linkStyle = {
   textDecoration: "none",
   color: "#2e2e2e",
@@ -148,6 +158,20 @@ const linkStyle = {
   fontSize: "14px",
 };
 
+// Style for active link
+const activeLinkStyle = {
+  color: "#D4B483", // secondary.main (you can adjust this color)
+  fontWeight: "bold",
+  textDecoration: 'underline'
+};
+
+// Style for active item in drawer
+const activeDrawerLink = {
+  ...linkStyle,
+  color: "#D4B483", // active color for drawer links
+};
+
+// Login button
 const loginButtonStyle = {
   fontWeight: 500,
   fontSize: "14px",

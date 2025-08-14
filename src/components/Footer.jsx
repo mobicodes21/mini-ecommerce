@@ -15,6 +15,7 @@ import {
 } from "@mui/icons-material";
 
 import { Link as RouterLink } from "react-router-dom";
+
 {/* Footer component:
  - Displays the website footer with three main sections:
   1. About the shop with a brief description
@@ -143,7 +144,7 @@ export default function Footer() {
               <Phone fontSize="small" />
             </Box>
             <Box sx={{ display: "flex", alignItems: "center", gap: 1, my: 2 }}>
-              <Typography variant="body2">myshop@gmail.com</Typography>
+              <Typography variant="body2">pooshamod@gmail.com</Typography>
               <Email fontSize="small" />
             </Box>
             <Box sx={{ display: "flex", gap: 1, mt: 2 }}>

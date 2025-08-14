@@ -1,4 +1,5 @@
 // Import Swiper core styles and custom styles
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -11,6 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import { getAllCategories } from "../services/allCategories";
 import { useNavigate } from "react-router-dom";
+
 // Swiper component to display product categories as a carousel
 export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
   const navigate = useNavigate();
@@ -39,7 +41,7 @@ export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
   if (loading) return <Typography>در حال بارگذاری دسته‌بندی‌ها...</Typography>;
   if (error) return <Typography>{error}</Typography>;
   return (
-    <Box sx={{ maxWidth: "100%", margin: "auto", my: 15 }}>
+    <Box sx={{ maxWidth: "100%", margin: "auto", my: 4 }}>
       <Typography
         variant="h5"
         textAlign="center"

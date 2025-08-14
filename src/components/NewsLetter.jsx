@@ -25,7 +25,7 @@ export default function NewsLetter() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        mt: 15,
+        mt: 4,
       }}
     >
       {/* افکت موجی در پس‌زمینه */}
