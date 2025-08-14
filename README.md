@@ -11,7 +11,7 @@ It’s all about fast UI, smooth UX, clean code, and showing off top-tier React 
 
 # Demo
 
-![PooshaMod Demo](./assets/demo.gif)
+![PooshaMod Demo](./demo.gif)
 
 
 
