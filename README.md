@@ -7,15 +7,6 @@ It’s all about fast UI, smooth UX, clean code, and showing off top-tier React 
 
 🌐 [Live Demo on Vercel](https://mini-ecommerce-ikko.vercel.app/)
 
-
-
-# Demo
-
-![PooshaMod Demo](./demo.gif)
-
-
-
-
 ---
 
 🛠 Tech Stack
