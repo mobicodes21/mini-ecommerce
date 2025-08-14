@@ -14,24 +14,24 @@ import { useNavigate } from "react-router-dom";
 const categories = [
   {
     id: 1,
-    images: {default: "/public/images/clocks.gif",
-      mobile: "/public/images/clock3.jpg"
+    images: {default: "/images/clocks.gif",
+      mobile: "/images/clock3.jpg"
     },
     title: "ساعت",
     link: "/categoriesSwiper/ساعت",
   },
   {
     id: 2,
-    images: {default: "/public/images/shoesBanner.webp",
-      mobile: '/public/images/shoesBanner3.jpg'
+    images: {default: "/images/shoesBanner.webp",
+      mobile: '/images/shoesBanner3.jpg'
     },
     title: "کفش زنانه و مردانه",
     link: "/categoriesSwiper/کفش",
   },
   {
     id: 3,
-    images: {default: "/public/images/jewelery.webp",
-      mobile: "/public/images/jewlery2.jpg"
+    images: {default: "/images/jewelery.webp",
+      mobile: "/images/jewlery2.jpg"
     },
     title: "زیورآلات",
     link: "/categoriesSwiper/زیورآلات",
