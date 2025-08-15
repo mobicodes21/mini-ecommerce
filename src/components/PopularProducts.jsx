@@ -18,14 +18,25 @@ export default function PopularProducts() {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   // Fetch popular products from API when component mounts
-  useEffect(() => {
-    fetch("http://localhost:3001/products?isPopular=true")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setLoading(false); // Stop loading once data is fetched
-      });
-  }, []);
+useEffect(() => {
+  fetch("https://689f49313fed484cf879ac3c.mockapi.io/store")
+    .then((res) => res.json())
+    .then((data) => {
+      if (Array.isArray(data) && data.length > 0) {
+        const products = data[0].products || [];
+        const popularProducts = products.filter(product => product.isPopular === true);
+        setProducts(popularProducts);
+      } else {
+        setProducts([]);
+      }
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error("خطا در دریافت داده", err);
+      setLoading(false);
+    });
+}, []);
+
   // Show loading message
   if (loading) return <p>در حال بارگذاری...</p>;
   // Show message if no products found

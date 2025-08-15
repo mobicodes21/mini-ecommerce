@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+
 // Custom hook to parse URL query parameters
 function UseQuery() {
   return new URLSearchParams(useLocation().search);
@@ -15,11 +16,22 @@ function SearchResults() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const navigate = useNavigate();
   // Fetch all products on component mount
-  useEffect(() => {
-    fetch("http://localhost:3001/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+useEffect(() => {
+  fetch("https://689f49313fed484cf879ac3c.mockapi.io/store")
+    .then((res) => res.json())
+    .then((data) => {
+      if (Array.isArray(data) && data.length > 0) {
+        setProducts(data[0].products || []);
+      } else {
+        setProducts([]);
+      }
+    })
+    .catch((err) => {
+      console.error("خطا در دریافت داده:", err);
+      setProducts([]);
+    });
+}, []);
+
   // Filter products whenever searchTerm or products list changes
   useEffect(() => {
     const filtered = products.filter((product) =>

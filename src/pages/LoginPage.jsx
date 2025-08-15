@@ -24,22 +24,18 @@ export default function LoginPage() {
     password: "",
   };
   // handles form submission by calling login API and navigating on success
-  const handleSubmit = async (values, { setSubmitting, setErrors }) => {
-    try {
-      const response = await login(values.email, values.password);
-      console.log("فرم ارسال شد", values);
+const handleSubmit = async (values, { setSubmitting, setErrors }) => {
+  try {
+    const user = await login(values.email, values.password);
+    console.log("ورود موفق:", user);
+    navigate("/"); // موفقیت در ورود
+  } catch (error) {
+    setErrors({ password: error.message || "ایمیل یا رمز عبور اشتباه است" });
+  } finally {
+    setSubmitting(false);
+  }
+};
 
-      if (response.length > 0) {
-        navigate("/");
-      } else {
-        setErrors({ password: "ایمیل یا رمز عبور اشتباه است" });
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setSubmitting(false);
-    }
-  };
   return (
     <Box
       sx={{

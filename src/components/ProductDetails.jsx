@@ -23,18 +23,24 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch(`/db.json`)
-      .then((res) => res.json())
-      .then((data) => {
-        const foundProduct = data.products.find(
-          (product) => product.id.toString() === id
+useEffect(() => {
+  fetch("https://689f49313fed484cf879ac3c.mockapi.io/store")
+    .then((res) => res.json())
+    .then((data) => {
+      if (Array.isArray(data) && data.length > 0) {
+        const products = data[0].products || [];
+        const foundProduct = products.find(
+          (product) => product.id.toString() === id.toString()
         );
-        setProduct(foundProduct);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, [id]);
+        setProduct(foundProduct || null);
+      } else {
+        setProduct(null);
+      }
+      setLoading(false);
+    })
+    .catch(() => setLoading(false));
+}, [id]);
+
 
   if (loading) return <Typography variant="h6">در حال بارگذاری...</Typography>;
   if (!product) return <Typography variant="h6">محصول پیدا نشد</Typography>;
