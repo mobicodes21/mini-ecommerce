@@ -1,15 +1,14 @@
-import axios from "axios";
+import axios from "axios"
 
 const API_URL = "/db.json";
 
-export const getUsers = () => {
-  return axios.get(API_URL).then(res => res.data.users);
+export const signup = (userData) => {
+  return Promise.reject(new Error("عملیات ثبت نام با فایل json استاتیک امکان‌پذیر نیست"));
 };
 
 export const login = (email, password) => {
-  return getUsers().then(users => {
-    return users.filter(
-      user => user.email === email && user.password === password
-    );
+  return axios.get(API_URL).then(res => {
+    const users = res.data.users || [];
+    return users.filter(user => user.email === email && user.password === password);
   });
 };
