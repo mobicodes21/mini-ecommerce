@@ -15,7 +15,7 @@ export default function SpecialOffers() {
   const navigate = useNavigate();
   // Fetch special offers once on component mount
   useEffect(() => {
-    getSpecialOffers().then((res) => setOffers(res.data));
+    getSpecialOffers().then((offers) => setOffers(offers));
   }, []);
 
   return (

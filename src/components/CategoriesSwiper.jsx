@@ -28,8 +28,8 @@ export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
 // Fetch all categories on component mount
   useEffect(() => {
     getAllCategories()
-      .then((res) => {
-        setGetCategories(res.data);
+      .then((categories) => {
+        setGetCategories(categories);
         setLoading(false);
       })
       .catch((err) => {
