@@ -1,20 +1,28 @@
+import Banner from "../components/Banner";
+import { Box } from "@mui/material";
+import Footer from "./Footer";
+import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom"; // Outlet for nested routes rendering
-import Banner from "../components/Banner";// Banner component at the top of the page
-import Navbar from "../components/Navbar";// Navigation bar component
-import Footer from "./Footer";// Footer component
+
+// Banner component at the top of the page
+// Navigation bar component
+// Footer component
 
 const MainLayout = () => {
   return (
-    <>
-    {/* Display the banner at the top */}
+    <Box display="flex" flexDirection="column" minHeight="100vh">
+      {/* Display the banner at the top */}
       <Banner />
       {/* Render the navigation bar */}
       <Navbar />
-      {/* Render the matched child route component */}
-      <Outlet />
+      <Box component="main" flexGrow={1}>
+        {/* Render the matched child route component */}
+        <Outlet />
+      </Box>
+
       {/* Display the footer at the bottom */}
       <Footer />
-    </>
+    </Box>
   );
 };
 export default MainLayout;
