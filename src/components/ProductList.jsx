@@ -2,41 +2,53 @@ import { Box, Card, CardContent, CardMedia, Grid, Typography } from '@mui/materi
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { getCategory } from '../services/categoryService';
+// تابع گرفتن محصولات از API و فیلتر بر اساس category
+async function getCategory(categoryValue) {
+  try {
+    const response = await fetch('https://689f49313fed484cf879ac3c.mockapi.io/store');
+    const data = await response.json();
+    if (!data || data.length === 0) return [];
+
+    const allProducts = data[0].products;
+
+    if (!categoryValue) return allProducts;
+
+    // فیلتر محصولات بر اساس دسته‌بندی
+    return allProducts.filter(product => product.category === categoryValue);
+  } catch (error) {
+    throw new Error('خطا در دریافت داده‌ها', error);
+  }
+}
 
 export default function ProductList() {
-  // Extract category parameter from URL
   const { category } = useParams();
-  // For programmatic navigation to product detail pages
   const navigate = useNavigate();
-  // State to hold the list of products
   const [products, setProducts] = useState([]);
-  // State to handle loading indicator
   const [loading, setLoading] = useState(false);
-  // State to capture and display error messages
   const [error, setError] = useState(null);
-// Effect hook runs on category change to fetch products
+
   useEffect(() => {
     setLoading(true);
     setError(null);
+
     getCategory(category)
-      .then((response) => {
-        setProducts(response.data);
+      .then((prods) => {
+        setProducts(prods);
         setLoading(false);
       })
-      .catch((err) => {
-        setError('خطا در بارگذاری محصولات', err);
+      .catch(() => {
+        setError('خطا در بارگذاری محصولات');
         setLoading(false);
       });
   }, [category]);
-// Show loading message while fetching data
+
   if (loading)
     return (
       <Box sx={{ textAlign: 'center', mt: 5 }}>
         <Typography variant="h6">در حال بارگذاری اطلاعات...</Typography>
       </Box>
     );
-// Show error message if fetching fails
+
   if (error)
     return (
       <Box sx={{ textAlign: 'center', mt: 5 }}>
@@ -53,10 +65,10 @@ export default function ProductList() {
         textAlign="center"
         sx={{ mb: 5, color: 'text.primary', fontWeight: 'bold' }}
       >
-        محصولات دسته‌بندی {category}
+        محصولات دسته‌بندی {category || 'همه'}
       </Typography>
 
-      <Grid container spacing={3} sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         {products.length === 0 ? (
           <Grid item xs={12}>
             <Typography variant="h6" textAlign="center">
@@ -72,17 +84,15 @@ export default function ProductList() {
                   borderRadius: 2,
                   cursor: 'pointer',
                   transition: 'all 0.3s ease-in-out',
-                  '&:hover': {
-                    transform: 'translateY(-5px)',
-                    boxShadow: 4,
-                  },
+                  '&:hover': { transform: 'translateY(-5px)', boxShadow: 4 },
                 }}
                 onClick={() => navigate(`/product/${item.id}`)}
               >
                 <CardMedia
                   component="img"
                   height="200"
-                  image={item.image || '/placeholder.jpg'}
+                  image={
+                    item.image}
                   alt={item.title}
                   sx={{ objectFit: 'cover' }}
                 />
@@ -91,7 +101,12 @@ export default function ProductList() {
                     {item.title}
                   </Typography>
                   <Typography variant="body2" color="text.secondary" mt={1}>
-                    {item.price.toLocaleString()} تومان
+                    {item.discount > 0 && item.newPrice
+                      ? (
+                          item.newPrice.toLocaleString() +
+                          ' تومان '
+                        )
+                      : item.price.toLocaleString() + ' تومان'}
                   </Typography>
                 </CardContent>
               </Card>

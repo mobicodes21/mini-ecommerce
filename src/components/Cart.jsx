@@ -25,12 +25,19 @@ export default function Cart() {
   const totalPrice = useSelector(selectTotalPrice);
   const [products, setProducts] = useState([]);
   // Fetch product data from local server on component mount
-  useEffect(() => {
-    fetch("http://localhost:3001/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((err) => console.error("خطا در دریافت داده", err));
-  }, []);
+useEffect(() => {
+  fetch("https://689f49313fed484cf879ac3c.mockapi.io/store")
+    .then((res) => res.json())
+    .then((data) => {
+      if (Array.isArray(data) && data.length > 0) {
+        setProducts(data[0].products || []);
+      } else {
+        setProducts([]);
+      }
+    })
+    .catch((err) => console.error("خطا در دریافت داده", err));
+}, []);
+
   // Merge cart items with full product data (image, name, price)
   const mergedCartItems = cartItems.map((cartItem) => {
     const fullProduct = products.find((p) => p.id === cartItem.id);

@@ -1,11 +1,9 @@
-// Import Swiper core styles and custom styles
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./swiper.css";
 
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { A11y, Navigation, Scrollbar } from "swiper/modules"; // اضافه Autoplay
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,19 +11,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { getAllCategories } from "../services/allCategories";
 import { useNavigate } from "react-router-dom";
 
-// Swiper component to display product categories as a carousel
 export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
   const navigate = useNavigate();
 
   const [getCategories, setGetCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  // Navigate to selected category and call optional callback
+
   const handleCategoryClick = (category) => {
     navigate(`/categoriesSwiper/${category}`);
     onCategorySelect(category);
   };
-// Fetch all categories on component mount
+
   useEffect(() => {
     getAllCategories()
       .then((categories) => {
@@ -40,6 +37,7 @@ export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
 
   if (loading) return <Typography>در حال بارگذاری دسته‌بندی‌ها...</Typography>;
   if (error) return <Typography>{error}</Typography>;
+
   return (
     <Box sx={{ maxWidth: "100%", margin: "auto", my: 4 }}>
       <Typography
@@ -49,17 +47,21 @@ export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
       >
         دسته بندی محصولات
       </Typography>
-      {/* Swiper carousel with category cards */}
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Scrollbar, A11y]} // اضافه Autoplay به ماژول‌ها
         spaceBetween={50}
         slidesPerView={3}
         navigation
+        pagination={{ clickable: false }} // اضافه pagination قابل کلیک
         scrollbar={{ draggable: true }}
+        loop={true}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
-        loop={true}
-        autoplay={{ delay: 1000, disableOnInteraction: false }}
+        breakpoints={{
+          320: { slidesPerView: 1, spaceBetween: 10 },
+          600: { slidesPerView: 2, spaceBetween: 20 },
+          900: { slidesPerView: 3, spaceBetween: 30 },
+        }}
       >
         {getCategories.map((cat) => (
           <SwiperSlide key={cat.id}>
@@ -80,7 +82,6 @@ export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
               }}
               onClick={() => handleCategoryClick(cat.value)}
             >
-              {/* Category image */}
               <Box
                 sx={{
                   mb: 1,
@@ -91,13 +92,12 @@ export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
                   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
                 }}
               >
+                {/* مسیر عکس‌ها را اگر لازم است اصلاح کن */}
                 <img
                   src={cat.image}
-                  alt={cat.title}
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </Box>
-              {/* Category title */}
               <Typography
                 variant="subtitle1"
                 sx={{ fontSize: "14px", fontWeight: "bold" }}
