@@ -25,7 +25,7 @@ export default function ProductList() {
         setLoading(false);
       })
       .catch((err) => {
-        setError('خطا در بارگذاری محصولات');
+        setError('خطا در بارگذاری محصولات', err);
         setLoading(false);
       });
   }, [category]);
