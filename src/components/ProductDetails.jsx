@@ -14,34 +14,35 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { addItemToCart } from "../redux/cart/cartSlice";
 import { useDispatch } from "react-redux";
-// Product detail page component
+
 export default function ProductDetail() {
-  const { id } = useParams(); // Get product ID from route params
+  const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // State to hold product data
+
   const [product, setProduct] = useState(null);
-  // Loading state to show spinner or loading text
   const [loading, setLoading] = useState(true);
-  // Fetch product details from API when component mounts or id changes
+
   useEffect(() => {
-    fetch(`http://localhost:3001/products/${id}`)
+    fetch(`/db.json`)
       .then((res) => res.json())
       .then((data) => {
-        setProduct(data);
+        const foundProduct = data.products.find(
+          (product) => product.id.toString() === id
+        );
+        setProduct(foundProduct);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, [id]);
-  // Show loading text while fetching data
+
   if (loading) return <Typography variant="h6">در حال بارگذاری...</Typography>;
-  // Show message if product not found
   if (!product) return <Typography variant="h6">محصول پیدا نشد</Typography>;
-  // Calculate discounted price if discount exists
+
   const discountedPrice = product.discount
     ? product.price - (product.price * product.discount) / 100
     : null;
-  // Dispatch action to add product to cart in redux store
+
   const handleAddToCart = () => {
     dispatch(
       addItemToCart({
@@ -56,7 +57,6 @@ export default function ProductDetail() {
   return (
     <Container maxWidth="lg" sx={{ my: 6 }}>
       <Grid container spacing={4} alignItems="center">
-        {/* Product image */}
         <Grid item xs={12} md={6}>
           <Box
             component="img"
@@ -72,7 +72,6 @@ export default function ProductDetail() {
           />
         </Grid>
 
-        {/* Product info */}
         <Grid item xs={12} md={6}>
           <Typography
             variant="h4"
@@ -84,7 +83,6 @@ export default function ProductDetail() {
           </Typography>
 
           <Box sx={{ my: 2 }}>
-            {/* Show discount if available */}
             {product.discount ? (
               <>
                 <Typography
@@ -126,13 +124,11 @@ export default function ProductDetail() {
             دسته‌بندی: {product.category}
           </Typography>
 
-          {/* Action buttons */}
           <Stack
             direction={{ xs: "column", sm: "row" }}
             spacing={2}
             sx={{ mt: 4, gap: 2 }}
           >
-            {/* Add to cart button */}
             <Button
               onClick={handleAddToCart}
               variant="contained"
@@ -149,7 +145,7 @@ export default function ProductDetail() {
             >
               افزودن به سبد خرید
             </Button>
-            {/* Navigate to cart button */}
+
             <Button
               onClick={() => navigate("/cart")}
               variant="outlined"
