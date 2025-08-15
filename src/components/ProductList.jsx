@@ -92,10 +92,7 @@ export default function ProductList() {
                   component="img"
                   height="200"
                   image={
-                    item.image.startsWith('http')
-                      ? item.image
-                      : `https://689f49313fed484cf879ac3c.mockapi.io${item.image}`
-                  }
+                    item.image}
                   alt={item.title}
                   sx={{ objectFit: 'cover' }}
                 />

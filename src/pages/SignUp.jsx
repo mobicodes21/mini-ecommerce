@@ -33,21 +33,24 @@ export default function SignUp() {
     confirmPassword: "",
   };
   // Form submission handler: calls signup API, shows success message, then redirects
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    try {
-      await signup(values);
-      console.log("اطلاعات فرم ثبت نام: ", values);
-      setOpenSnackbar(true); // show success snackbar
-      resetForm(); // reset form fields
-      setTimeout(() => {
-        navigate("/login"); // redirect to login after 2 seconds
-      }, 2000);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+  try {
+    const { username, email, password } = values;
+    await signup({ username, email, password });
+    setOpenSnackbar(true);
+    resetForm();
+    setTimeout(() => {
+      navigate("/login");
+    }, 2000);
+  } catch (error) {
+    console.error("خطا در ثبت نام:", error);
+    alert("ثبت‌نام با خطا مواجه شد");
+  } finally {
+    setSubmitting(false);
+  }
+};
+
+
 
   return (
     <Box

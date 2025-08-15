@@ -3,7 +3,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./swiper.css";
 
-import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules"; // اضافه Autoplay
+import { A11y, Navigation, Scrollbar } from "swiper/modules"; // اضافه Autoplay
 import { Box, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -48,14 +48,13 @@ export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
         دسته بندی محصولات
       </Typography>
       <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]} // اضافه Autoplay به ماژول‌ها
+        modules={[Navigation, Scrollbar, A11y]} // اضافه Autoplay به ماژول‌ها
         spaceBetween={50}
         slidesPerView={3}
         navigation
-        pagination={{ clickable: true }} // اضافه pagination قابل کلیک
+        pagination={{ clickable: false }} // اضافه pagination قابل کلیک
         scrollbar={{ draggable: true }}
         loop={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }} // تنظیم بهتر زمان autoplay
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
         breakpoints={{
@@ -95,8 +94,7 @@ export default function CategoriesSwiper({ onCategorySelect = () => {} }) {
               >
                 {/* مسیر عکس‌ها را اگر لازم است اصلاح کن */}
                 <img
-                  src={cat.image.startsWith("http") ? cat.image : `https://689f49313fed484cf879ac3c.mockapi.io${cat.image}`}
-                  alt={cat.title}
+                  src={cat.image}
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
               </Box>
