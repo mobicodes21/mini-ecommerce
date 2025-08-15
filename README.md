@@ -1,20 +1,12 @@
 # ✨ PooshaMod
 
+
 🛍️ Seamless & Modern Online Shopping Experience
 
 PooshaMod is a sleek and modern E-commerce web app built with React + Vite ⚡️
 It’s all about fast UI, smooth UX, clean code, and showing off top-tier React skills.
 
 🌐 [Live Demo on Vercel](https://mini-ecommerce-ikko.vercel.app/)
-
-
-
-# Demo
-
-![PooshaMod Demo](./demo.gif)
-
-
-
 
 ---
 
@@ -62,6 +54,8 @@ The toast messages appear briefly in the viewport corner, providing clear and im
 
 ---
 
+🏗 Project Structure
+
 PooshaMod/
 ├─ public/
 ├─ src/
@@ -70,12 +64,8 @@ PooshaMod/
 │  ├─ redux/            # State slices & store
 │  ├─ api/              # Axios / fetch requests
 │  └─ styles/           # Global & component styles
-├─ assets/               # Images & GIFs
-│  └─ demo.gif
 ├─ db.json               # JSON Server mock data
 └─ vite.config.js
-
-
 
 ---
 
@@ -103,10 +93,14 @@ PooshaMod/
 
 ```bash
 git clone https://github.com/mobicodes21/mini-ecommerce.git
+PooshaMod
 cd PooshaMod
 npm install
 npm run dev
 
+2️⃣ Start Mock API
+
+npx json-server --watch db.json --port 3001
 
 
 ---
@@ -120,5 +114,8 @@ Redux makes scaling & maintenance easy
 MUI + Styled Components keep the UI sharp & responsive
 
 Formik + Yup make forms a breeze
+
+
+Structured for clean, scalable, maintainable code ✨
 
 Structured for clean, scalable, maintainable code ✨
