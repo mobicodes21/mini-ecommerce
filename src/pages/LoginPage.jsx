@@ -29,7 +29,7 @@ export default function LoginPage() {
       const response = await login(values.email, values.password);
       console.log("فرم ارسال شد", values);
 
-      if (response.data.length > 0) {
+      if (response.length > 0) {
         navigate("/");
       } else {
         setErrors({ password: "ایمیل یا رمز عبور اشتباه است" });
