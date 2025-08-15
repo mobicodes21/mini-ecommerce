@@ -3,7 +3,7 @@ import axios from "axios";
 const BASE_URL = "https://689f49313fed484cf879ac3c.mockapi.io";
 
 export const signup = (userData) => {
-  const { username, email, password } = userData; // فقط این 3 تا
+  const { username, email, password } = userData; 
   return axios.post("https://689f49313fed484cf879ac3c.mockapi.io/users", {
     username,
     email,
