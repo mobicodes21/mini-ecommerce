@@ -1,10 +1,15 @@
-import axios from "axios"
+import axios from "axios";
 
-const API_URL = "http://localhost:3001";
-export const signup = (userData)=>{
-    return axios.post(`${API_URL}/users`, userData)
+const API_URL = "/db.json";
+
+export const getUsers = () => {
+  return axios.get(API_URL).then(res => res.data.users);
 };
 
-export const login = (email, password)=>{
-    return axios.get(`${API_URL}/users?email=${email}&password=${password}`)
-}
+export const login = (email, password) => {
+  return getUsers().then(users => {
+    return users.filter(
+      user => user.email === email && user.password === password
+    );
+  });
+};

@@ -1,7 +1,9 @@
-import axios from "axios"
+import axios from "axios";
 
-const API_URL = 'http://localhost:3001';
+const API_URL = '/db.json';
 
-export const getSpecialOffers = ()=>{
-    return axios.get(`${API_URL}/products?discount_gte=1`);
-}
+export const getSpecialOffers = () => {
+  return axios.get(API_URL).then(res => {
+    return res.data.products.filter(product => product.discount >= 1);
+  });
+};
